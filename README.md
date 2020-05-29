@@ -1,10 +1,4 @@
-This project was bootstrapped with
-[Bottender](https://github.com/Yoctol/bottender) init script.
-
-## Sending Feedback
-
-Always feel free to open an issue to
-[Bottender](https://github.com/Yoctol/bottender/issues) repository.
+#### Language Translation Bot
 
 ## Configuration
 

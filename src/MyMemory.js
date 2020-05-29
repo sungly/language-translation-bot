@@ -1,13 +1,25 @@
+const axios = require('axios');
+
 class MyMemory {
+  constructor({ url, username, password }) {
+    this.url = url;
+    this.username = username;
+    this.password = password;
+  }
+
   /**
    * Call https://api.mymemory.translated.net/ endpoint to translate the given text
    *
    * @param {*} text
-   * @param {string} fromLanguage   - original text language
-   * @param {string} toLanguage     - desire text language
+   * @param {string} fromLang   - original text language
+   * @param {string} toLang     - desire text language
    */
-  translateText(text, fromLanguage, toLanguage) {
-    throw new Error('Not implemented...');
+  async translateText(text, fromLang, toLang) {
+    const url = `${this.url}/get?q=${text}&langpair=${fromLang}|${toLang}`;
+
+    const response = await axios.get(url);
+
+    return response.data.responseData.translatedText;
   }
 
   /**
@@ -18,7 +30,21 @@ class MyMemory {
    * @param {*} username
    * @param {*} password
    */
-  generateKeyGen(username, password) {
+  async generateKeyGen(username, password) {
+    throw new Error('Not implemented...');
+  }
+
+  /**
+   * Contribute to MyMemory Translation
+   *
+   * @param {*} originalText
+   * @param {*} translatedText
+   * @param {*} fromLang
+   * @param {*} toLang
+   */
+  async contributeTranslation(originalText, translatedText, fromLang, toLang) {
+    const url = `${this.url}/set?seg=${originalText}&tra=${translatedText}&=${fromLang}|${toLang}`;
+
     throw new Error('Not implemented...');
   }
 }
