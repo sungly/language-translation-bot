@@ -31,7 +31,11 @@ class MyMemory {
    * @param {*} password
    */
   async generateKeyGen(username, password) {
-    throw new Error('Not implemented...');
+    const url = `${this.url}/keygen?user=${this.username}&pass=${this.password}`;
+
+    const response = await axios.get(url);
+
+    return response;
   }
 
   /**

@@ -11,8 +11,10 @@ const myMemory = new MyMemory({
   password: myMemoryPassword,
 });
 
+
 module.exports = async function App(context) {
   if (context.event.isText) {
+
     const result = await myMemory.translateText(context.event.text, 'en', 'km');
 
     console.log(result);
