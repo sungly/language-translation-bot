@@ -1,4 +1,5 @@
 const MyMemory = require('./MyMemory');
+
 const {
   myMemoryBaseUrl,
   myMemoryUsername,
@@ -11,13 +12,12 @@ const myMemory = new MyMemory({
   password: myMemoryPassword,
 });
 
-
 module.exports = async function App(context) {
   if (context.event.isText) {
 
-    const result = await myMemory.translateText(context.event.text, 'en', 'km');
+    context.sendSenderAction('typing_on');
 
-    console.log(result);
+    const result = await myMemory.translateText(context.event.text, 'en', 'km');
 
     await context.sendText(result);
   }
