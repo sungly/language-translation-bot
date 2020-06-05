@@ -6,6 +6,8 @@ A facebook messenger bot for translating english sentences to Cambodian for my m
 #### How to get started
 1. Visit https://www.facebook.com/Translation-bot-114723880264824 and just send it a message
 
+![Video Demo](./raw/demo.gif)
+
 ## Configuration
 
 ### The `bottender.config.js` File
